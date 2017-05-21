@@ -1,0 +1,427 @@
+/*
+body {
+  text-align: center;
+}
+
+.nav {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.nav li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: auto;
+}
+.container {
+    padding: 20px;
+}
+
+.jumbotron{
+    
+    background-color: rgba(91, 192, 222, 0.05);
+}
+.postTextArea {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: solid 1.7px #0099cc;
+    resize: none;
+    width: 71%;
+}
+
+.editedPostTextArea{
+    resize: none;
+    
+}
+
+.postBtn {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #0099cc;
+    color: #0099cc;
+    background: none;
+    border-radius: 38px;
+    transition: border-radius 0.3s;
+}
+
+.postBtn:hover {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+    background: none !important;
+    border-radius: 9px;
+}
+
+.textAreaAndButton {
+    margin-bottom: 20px;
+}
+
+.post {
+    width: 91%;
+    border: 0.5px solid rgba(148, 145, 145, 0.28);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12.5px;
+    text-align: center;
+        background-color: rgba(247, 247, 246, 0);
+    
+    word-wrap: break-word;
+    padding: 5px;
+        border-radius: 10px;
+    
+}
+
+.post:hover {
+    border: solid 1px #0099cc;
+}
+#postUsername{
+        color: #7b7b7b;
+}
+
+#postProfileImage{
+    border-radius: 7px;
+}
+.post p {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #7b7b7b;
+
+    padding:20px;
+}
+#postImg{
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    
+}
+.postIcons {
+    font-size: 130%;
+    margin-right:2%;
+    color: #7b7b7b;
+}
+
+#like:hover {
+    color: royalblue;
+    cursor: pointer;
+}
+
+#dislike:hover {
+    color: red;
+    cursor: pointer;
+}
+
+#edit:hover {
+    color: green;
+    cursor: pointer;
+    
+}
+
+#comment{
+    cursor: pointer;
+    
+}
+
+
+#commentTextField{
+    display: inline-block;
+    width:75%;
+    
+}
+
+.commentbtn{
+    border: 2px solid;
+    color: #7b7b7b;
+    background: none;
+    border-radius: 10px;
+    transition: border-radius 0.3s;
+    
+    
+    
+}
+
+.commentbtn:hover{
+    border: 2px solid ;
+    color: #7b7b7b;
+    background: none !important;
+    border-radius: 9px;
+    
+}
+
+#applyEdits:hover {
+    color: green;
+    cursor: pointer;
+    
+}
+
+
+
+
+#remove {
+    float: right;
+    color: #cecece;
+}
+
+#remove:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.nav-tabs>li>a {
+    margin-right: -25px;}
+
+*/
+
+
+body {
+  text-align: center;
+    margin-top: -29px !important;
+}
+
+.nav {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+#navDemo{
+    margin-top: 20px !important;
+}
+.nav li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: auto;
+}
+.container {
+    padding: 20px;
+}
+
+.jumbotron{
+    
+ background-color: rgba(196,197,197,0.5);
+}
+.postTextArea {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: solid 1.2px lightgrey;
+    resize: none;
+    width: 90%;
+}
+
+.editedPostTextArea{
+    resize: none;
+    
+}
+
+.postBtn {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid lightgrey;
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    transition: border-radius 0.3s;
+}
+
+.postBtn:hover {
+    border:none;
+    color: cornflowerblue;
+    background: lightgrey !important;
+    border-radius: 9px;
+    border: 2px solid lightgrey;
+
+}
+
+.textAreaAndButton {
+    margin-bottom: 20px;
+}
+
+.post {
+    width: 91%;
+    border: 0.5px solid rgba(148, 145, 145, 0.28);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12.5px;
+    text-align: center;
+    background-color: rgba(247, 247, 246, 0);
+    word-wrap: break-word;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+.post:hover {
+    border: solid 1px lightgrey;
+    background-color: rgba(197,197,197,0.1)
+
+}
+#postUsername{
+        color: #7b7b7b;
+}
+
+#postProfileImage{
+    border-radius: 7px;
+    border: 1px solid lightgrey;
+}
+.post p {
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+
+    padding:20px;
+}
+#postImg{
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    
+}
+.postIcons {
+    font-size: 130%;
+    margin-right:2%;
+    color: #7b7b7b;
+}
+
+#like:hover {
+    color: royalblue;
+    cursor: pointer;
+}
+
+#dislike:hover {
+    color: red;
+    cursor: pointer;
+}
+
+#edit:hover {
+    color: green;
+    cursor: pointer;
+    
+}
+
+#comment{
+    cursor: pointer;
+    
+}
+
+
+#commentTextField{
+    display: inline-block;
+    width:75%;
+    
+}
+
+.commentbtn{
+    border: 2px solid;
+    color: #7b7b7b;
+    background: none;
+    border-radius: 10px;
+    transition: border-radius 0.3s;
+    
+    
+    
+}
+
+.commentbtn:hover{
+    border: 2px solid ;
+    color: #7b7b7b;
+    background: none !important;
+    border-radius: 9px;
+    
+}
+
+#applyEdits:hover {
+    color: green;
+    cursor: pointer;
+    
+}
+
+
+
+
+#remove {
+    float: right;
+    color: #cecece;
+}
+
+#remove:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.nav-tabs>li>a {
+    margin-right: -25px;}
+
+#userImage{
+    border: 1px lightgrey solid;
+    border-radius: 15px;
+    width:80%;
+    height:40%;
+    
+}
+.userData{
+    font-family: 'Roboto Condensed', sans-serif;
+    text-indent: 10px;
+    color: grey;
+    font-size: 17px;
+    display: block;
+}
+.userName{
+      font-family: 'Roboto Condensed', sans-serif;
+    text-indent: 10px;
+    color: grey;
+    font-size: 30px;
+    display: block;
+}
+footer{
+    background-color: rgba(197,197,197,0.3);
+}
+h2{
+    color: grey;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.w3-theme-l5{
+    background-color: rgba(0,0,295,0.5)
+}
+
+.widget{
+    margin-top: 15px !important;
+}
+
+.empty{
+    margin-top:50px
+}
+.profile{
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+
+.followTabs:hover{
+    cursor: pointer;
+}
+.tab-content{
+    overflow:scroll;
+    height:450px;
+}
+
+.comment-card{
+padding: 10px;
+    width: 66%;
+    /* background-color: rgba(202, 200, 200, 0.34); */
+    /* margin: 35px; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    border-radius: 27px;
+    border: 1px solid rgba(123, 123, 123, 0.34);
+}
+

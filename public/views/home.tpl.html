@@ -1,0 +1,336 @@
+<title>home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<div class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top" ng-init='get();getProfileImage();loadConnection();getOldNotifications()'>
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>friends</a>
+  <a href="#feeds" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="feeds"><i class="fa fa-globe"></i></a>
+  <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="home"><i class="fa fa-user"></i></a>
+
+  <a href="#messenger" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="messenger"><i class="fa fa-envelope"></i></a>
+  <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">{{oldNotificationsNum+notificationNum}}</span></button>     
+    <div  class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+        <span ng-click='removeNotification(notification._id)' class="w3-bar-item w3-button" ng-repeat='notification in notifications'>{{notification.from}} {{notification.action}} s your <span ng-if='notification.action!="follow" && notification.action!="unfollow"'>post : {{notification.post}}</span> <hr></span>
+        
+        
+        <span ng-click='removeNotification(notification._id)' class="w3-bar-item w3-button" ng-repeat='notification in oldNotifications'>{{notification.from}} {{notification.action}}s your<span ng-if='notification.action!="follow" && notification.action!="unfollow"'> post : {{notification.post}}</span> <hr></span>
+        
+        
+
+    </div>
+      
+  </div>
+     
+
+     
+     
+  
+  
+<div class="w3-dropdown-hover w3-right w3-padding-large">
+    
+<img  ng-src="{{i}}" class="w3-circle" style="height:25px;width:25px" alt="profile image">
+  <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+    <a href="#settings" class="w3-bar-item w3-button">settings</a>
+    <a href="#" class="w3-bar-item w3-button" ng-click='signout()'>logout</a>
+    
+  </div>
+</div>
+  
+
+  
+  
+  
+ </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+
+  <a href="#feeds" class="w3-bar-item w3-button w3-padding-large">feeds</a>
+  
+   <a href="#messenger" class="w3-bar-item w3-button w3-padding-large">messenger</a>
+   
+   <a href="#feeds" class="w3-bar-item w3-button w3-padding-large">feeds</a>
+  
+  <a href="#settings" class="w3-bar-item w3-button w3-padding-large">settings</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center userName">{{username}}</h4>
+         <p class="w3-center"><img id="userImage" ng-src='{{i}}' alt="profile image">
+             
+         </p>
+
+         <hr>
+         <center>
+         <p class="userData" ><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> {{job}}</p>
+         <p class="userData"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> {{POB}} </p>
+         <p class="userData"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> {{DOB}}</p>
+         </center>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Accordion -->
+      <div class="w3-card-2 w3-round">
+        <div class="w3-white">
+          <a href='#settings'  class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Settings</a>
+
+          
+ 
+              <a href='#images' class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-file-image-o fa-fw w3-margin-right"></i> Photos</a>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+      
+      <!-- Interests --> 
+      <div class="w3-card-2 w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+    <ul class="nav nav-tabs">
+    <li class='followTabs' ><a data-toggle="tab" data-target="#followers">followers</a></li>
+    <li class='followTabs'><a data-toggle="tab" data-target="#following">following</a></li>
+    <li class='followTabs'><a data-toggle="tab" data-target="#suggessions">suggessions</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div ng-init='getFollowers()'  id="followers" class="tab-pane fade in active">
+      <h3>followers ({{followers.length}})</h3>
+        <hr>
+        <h3 ng-if='followers.length==0' style='color:#c1c5c5'>you dont have any follower yet</h3>
+        <div style='margin-top: 44px;' ng-repeat='t in followers'>
+            <p ><span>{{t}}</span></p>
+                <hr>
+        </div>
+    </div>
+    <div ng-init='getFollowing()'  id="following" class="tab-pane fade">
+      <h3>following ({{following.length}})</h3>
+        <hr>
+        <h3 ng-if='following.length==0' style='color:#c1c5c5'>you did'nt follow any one yet</h3>
+         <div  ng-repeat='f in following'>
+             {{f}} <button ng-click='unfollow(f)' class='btn btn-danger' style='margin-right:10px'>unfollow</button>
+                <hr>
+        </div>
+    </div>
+    <div ng-init='getUsers()' id="suggessions" class="tab-pane fade">
+      <h3>suggessions</h3>
+        <hr>
+             <input ng-model='keySearch'  class="form-control w3-bar-item" type='text' placeholder="user search" style='margin-left: 20%;
+    margin-top: 7px;
+    width: 80%;border-radius: 10px;'>
+          <div style='margin-top: 44px; width:100%;margin-left:auto;margin-right:auto' ng-repeat='x in allUsers | filter:keySearch'  ng-if='x.username!=username && following.indexOf(x.username)==-1'>
+              <img style='height:50px;width:50px;border-radius:100px;margin-right:10px' src='{{x.profileImage}}'><span style='margin-right:10px'>{{x.username}}</span><button ng-click='follow(x.username)' class='btn' style='margin-right:10px'>follow</button>
+                <hr>
+        </div>
+    </div>
+
+  </div>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Alert Box -->
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>People are looking at your profile. Find out who.</p>
+      </div>
+    
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+        <h2>My Posts</h2>
+    
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+
+         <div class='textAreaAndButton'>
+   <textarea  ng-model='post' class="form-control postTextArea" rows="5"  placeholder='write any thing......'></textarea>
+   
+   <input type='url' placeholder='image URL' ng-model='image' class="form-control postTextArea">
+   <center>
+    <button id='addbtn'  ng-click='addPost()' class='btn btn-primary postBtn'>post</button>
+        
+    </center>
+    </div>
+<!--          </div>-->
+        </div>
+      </div>
+<!--
+      <div  ng-repeat = 'post in posts.data | orderBy:"-likes"'>
+      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <img ng-src="{{i}}" alt="Avatar" class="w3-left w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">1 min</span>
+        <h4 style='float:left'>{{post.username}}</h4><br>
+        <hr class="w3-clear">
+        <p>{{post.post}}</p>
+        <img id='postImg' ng-src='{{post.image}}' />
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>
+        </div>
+-->
+        
+        <h1 ng-if='posts.data.length==0' style='color:#c4cad0'>No posts yet</h1>
+    <div ng-repeat = 'post in posts.data | orderBy:"-likes"'>
+    <div  class="card w-75 post" >
+        <span id='remove' class='glyphicon glyphicon-remove' ng-click='remove(post._id)'></span>
+        
+
+    
+        
+  <div class="card-block" ng-init='isEditible=false; showCommentField=false'>
+      <img id='postProfileImage' ng-src="{{i}}" alt="profile image" class="w3-left w3-margin-right" style="width:60px">
+      <h4 id='postUsername' style='float:left'><b>{{post.username}}</b></h4><br>
+      <p contentEditable={{isEditible}} autofocus="autofocus" class="card-text" id='{{$index}}'>{{post.post}}</p>
+      
+      <img id='postImg' ng-src='{{post.image}}' />
+    <span id='like' class="glyphicon glyphicon-thumbs-up postIcons" ng-click='like(post._id,post.post,post.likes,post.disLikes)' data-toggle="tooltip"  title='{{post.likers.toString()}}'>{{post.likes}}</span>
+    <span id='dislike' class="glyphicon glyphicon-thumbs-down postIcons" ng-click='disLike(post._id,post.post,post.likes,post.disLikes)' data-toggle="tooltip"  title='{{post.disLikers.toString()}}'>{{post.disLikes}}</span>
+      <span id='edit' class='glyphicon glyphicon-pencil postIcons' ng-click='isEditible=true' ng-show='!isEditible'></span>
+      <span id='comment' class='glyphicon glyphicon-comment postIcons' ng-click='showComments=!showComments;getComments(post._id)'></span>
+      <span id='applyEdits' ng-if='isEditible' ng-click='edit(post._id,$index,post.likes,post.disLikes)' class='glyphicon glyphicon-ok postIcons'></span>
+  </div>
+        <div ng-show='showComments' class='commentsBlock'>
+        <hr>
+        <input id='commentTextField' ng-model='comment'  placeholder='comment' type='text' class='form-control'>
+            <button ng-click='addComment(post._id, comment)' class='commentbtn'>add</button>
+                     <div ng-repeat='c in comments track by $index'>
+                
+                
+                 <div class="card-block comment-card" >
+
+      <img  ng-src="{{c.profileImage}}" alt="profile image" class="w3-left w3-margin-right " style=" width: 12%;border-radius:15px;">
+      <b  id='postUsername' style='float:left;margin-top: 6px;font-size: 22px;' >{{c.username}}</b>
+      <p style='display:inline;font-size: 28px;color:#676565;'  autofocus="autofocus"  id='{{$index}}'>{{c.comment}}</p>
+      
+     <div>
+
+                     
+                     </div>        
+                     
+                </div>
+
+            <hr>
+            </div>
+            
+        </div>
+</div>
+    </div>
+
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+<!--
+      <div class="w3-card-2 w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Upcoming Events:</p>
+          <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Forest" style="width:100%;">
+          <p><strong>Holiday</strong></p>
+          <p>Friday 15:00</p>
+          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+        </div>
+      </div>
+-->
+        
+        
+                <!-- weather widget start -->
+    <div  class="widget">
+        <!-- weather widget start --><a  target="_blank" href="http://www.booked.net/weather/beirut-977"><img style='width: 98.5%;' src="https://w.bookcdn.com/weather/picture/32_977_1_1_3498db_250_2980b9_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=37372"  alt="booked.net"/></a><!-- weather widget end -->
+    </div>
+      <br>
+      <div class="w3-card-2 w3-round w3-white w3-center">
+       <div class="w3-card-2 w3-round w3-white w3-center">
+        <div style='height: auto;
+    padding: 3px;
+'>
+        <a class="ref" href="http://localhost:8071/#/signin" target="_blank"><img 
+     src="logo.png" width="200px" height="100px"></a>
+   </div>
+      </div>
+      </div>
+      <br>
+      
+      <div class="w3-card-2 w3-round w3-white w3-padding-16 w3-center">
+        <p>ADS</p>
+      </div>
+      <br>
+      
+      <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center">
+        <p><i class="fa fa-bug w3-xxlarge"></i></p>
+      </div>
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+  <h5 style="color:white">Hope to Enjoy Our Society</h5>
+</footer>
+
+
+ 
+<script>
+// Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else { 
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</div>
+

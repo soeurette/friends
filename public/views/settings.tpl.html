@@ -1,0 +1,67 @@
+
+
+<div class="empty"></div>
+<div class="container-fluid">
+    <div class="row profile">
+        <div class="col-md-3">
+ 
+        </div>
+        <center>
+            <div class="col-md-7" ng-init='getInfo()'>
+                <div class="profile-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 style="color:grey"> Personal Information</h1>
+                        </div>
+                    </div>
+                    <div class="row jumbotron">
+                        <div class="col-md-6">
+                            <label>username:</label><input ng-model="username" class="form-control" placeholder="username">
+                            <br>
+                            
+                            <label>profile image:</label><input ng-model="i" class="form-control" placeholder="profileImage">
+                            
+                            <br>
+                            <label>date of birth:</label><input type='date' ng-model="DOB" class="form-control" placeholder="Date Of Birth">
+                            <br>
+
+                        </div>
+                        <label>place of birth:</label><div class="col-md-6">
+                            <input ng-model="POB" class="form-control" placeholder="Place Of Birth">
+                            <br>
+                        <label>job:</label><input ng-model="job" class="form-control" placeholder="job">
+
+                        </div>
+
+                    </div>
+<!--
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1> Academic Information</h1>et  </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input ng-model="userInput.university" class="form-control" placeholder="University">
+
+                            </div>
+                            <div class="col-md-6">
+                                <input ng-model="userInput.Job" class="form-control" placeholder="job">
+                            </div>
+
+                        </div>
+-->
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:center">
+                                <hr/>
+                                <button ng-click="update()" class="btn btn-primary">update</button>
+                                <button ng-click="Home()" class="btn btn-primary">Back</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-2">
+           
+            </div>
+        </center>
+        </div>
+    </div>

@@ -1,0 +1,94 @@
+<link href="/css/main.css" rel="stylesheet" />
+ <div class="wrapper">
+  <div class="emptycolo" ></div>
+   <div class="row header">
+   <div class="col-md-5 col-md-offset-1">
+    <h2 class="WebName"> Friends </h2>
+   </div>
+    <div class="col-md-2 inputsSignin">
+        <input ng-model="userinput.username" placeholder="username..." class="form-control">
+    </div>
+      <div class="col-md-2 inputsSignin">
+        <input ng-model="userinput.password" placeholder="Password..." class="form-control">
+    </div>
+    <div class="col-md-1 inputsSignin" >
+        <button class="btn btn-default"  ng-click="signin()"> Sign in</button>
+    </div>
+</div>
+
+
+<div class="row body logoWrapper">
+    <div class="col-md-5 col-md-offset-1" style="margin-top:60px !important">
+       <div style="text-align:center !important">
+        <img src="/images/logo.png"   width="150px" height="150px"/>
+        </div>
+    <h3 style="color:white;font-family: 'Gloria Hallelujah', cursive;"> Friends makes a society for sharing and living a moment of being together</h3>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tourModal"> Blink </button>
+    </div>
+    <div class="col-md-5">
+        <h2 style="color:white"> New Comer Join Us !!</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+               <label > First Name</label>
+                 <input ng-model="userInput.username"  id="username" class="form-control" type="text" name="username"  required autofocus>
+                 <br>
+                 <label> Password</label>
+                <input ng-model="userInput.password" name="password" type="password" id="password" class="form-control"  required>
+                <br>
+                <label>Confirm Password</label>
+                  <input ng-model="Confirmpassword" name="password" type="password" id="password" class="form-control"  required>
+            </div>
+            <div class="col-md-6">
+                <label > Place Of Birth </label>
+                 <input ng-model="userInput.placeOfbirth"   class="form-control" type="text"   required autofocus>
+                 <br>
+                 <label>Job</label>
+                   <input ng-model="userInput.job"   class="form-control" type="text"   required autofocus>
+                   <br>
+                <label>Image</label>
+                  <input ng-model="userInput.profileImage" name="password" type="text" id="password" class="form-control"  required>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row body">
+    <div class="col-md-5 col-md-offset-1">
+ 
+    </div>
+    <div class="col-md-5">
+        <label> Date Of birth</label>
+         <input ng-model="userInput.dateOfbirth"  type="date" id="password" class="form-control"  required>
+         
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        
+    </div>
+    <div class="col-md-5 ">
+        <button style="float:left" ng-click="signup()" class="btn btn-primary">Create an Account</button>
+    </div>
+</div>
+</div>
+  <div class="modal fade" id="tourModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Welcome To Our Society</h4>
+        </div>
+        <div class="modal-body">
+         <p> Friends is a social web application designed by a group in vschool students of beirut that depends on the idea of creating a social media for connecting people around the class and even around the world builded by friends group</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+
+    </div>
+  </div>
+  

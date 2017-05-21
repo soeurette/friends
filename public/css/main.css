@@ -1,0 +1,33 @@
+.header {
+    background-color: #01579B;
+    height: 70px;
+    margin-top: 29px;
+}
+
+.inputsSignin{
+    margin-top: 16px;
+}
+
+.body{
+    background-color: #0277BD;
+    
+}
+
+.logoWrapper{
+    margin-top: 70px;
+
+}
+.wrapper{
+       background-color:#0277BD ;
+     height:1000px;
+}
+.WebName{
+    color:white;
+    font-size:30px;
+    float:left;
+    font-family: 'Lobster', cursive;
+
+}
+label{
+    color:white
+}
